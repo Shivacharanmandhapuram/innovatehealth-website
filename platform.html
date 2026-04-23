@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="InnovateHealth Platform - The complete operating layer for independent clinics. Voice front desk, smart intake, and connected workflows.">
+  <title>Our Platform | InnovateHealth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=15">
+  <style>
+    /* Platform Specific Styles */
+    .platform-hero {
+      padding: 120px 24px 80px;
+      text-align: center;
+      background: radial-gradient(ellipse at top center, var(--pk-sage-light) 0%, var(--pk-bg-light) 70%);
+    }
+    .platform-hero .headline-lg {
+      font-size: 3.5rem;
+      font-family: var(--font-serif);
+      font-weight: 500;
+      color: var(--pk-dark-green);
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+    .platform-hero .subheadline {
+      font-size: 1.25rem;
+      color: var(--pk-text-muted);
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+    .layer-architecture {
+      padding: 80px 24px;
+      background: var(--pk-white);
+    }
+    .layer-architecture .container {
+      max-width: 1000px;
+    }
+    .architecture-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-top: 64px;
+    }
+    @media (min-width: 768px) {
+      .architecture-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .arch-card {
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      background: var(--pk-bg-surface);
+      border: 1px solid var(--pk-divider);
+      position: relative;
+    }
+    .arch-card.active {
+      border-color: var(--pk-accent-coral);
+      box-shadow: 0 0 0 1px var(--pk-accent-coral);
+    }
+    .arch-badge {
+      position: absolute;
+      top: -12px;
+      left: 40px;
+      background: var(--pk-accent-coral);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .arch-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .arch-list {
+      margin-top: 24px;
+    }
+    .arch-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: var(--pk-text-muted);
+    }
+    .integration-strip {
+      padding: 60px 0;
+      background: var(--pk-dark-green);
+      color: white;
+      text-align: center;
+    }
+    .different-section {
+      padding: 120px 24px;
+      background: var(--pk-bg-surface);
+    }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--pk-accent-coral);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    
+    /* Compare Section Enhancements */
+    .compare-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media (min-width: 992px) {
+      .compare-split {
+        grid-template-columns: 1fr 1.15fr;
+        align-items: center;
+      }
+    }
+    .compare-card {
+      border-radius: var(--radius-xl);
+      padding: 48px 40px;
+      position: relative;
+      overflow: visible;
+    }
+    .status-quo {
+      background: white;
+      border: 1px solid var(--pk-divider);
+      opacity: 0.9;
+      transform: scale(0.98);
+      transform-origin: right center;
+    }
+    .innovate-health {
+      background: var(--pk-dark-green);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 24px 48px rgba(26, 51, 44, 0.2);
+      transform: scale(1.02);
+      transform-origin: left center;
+      z-index: 2;
+    }
+    .compare-bg-glow {
+      position: absolute;
+      top: 0; right: 0;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(232, 115, 74, 0.15) 0%, transparent 70%);
+      transform: translate(30%, -30%);
+      pointer-events: none;
+    }
+    .compare-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid;
+    }
+    .status-quo .compare-card-header {
+      border-color: var(--pk-divider);
+    }
+    .innovate-health .compare-card-header {
+      border-color: rgba(255,255,255,0.1);
+    }
+    .compare-card-header h3 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      margin: 0;
+    }
+    .compare-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+    }
+    .compare-badge.gray {
+      background: var(--pk-bg-light);
+      color: var(--pk-text-muted);
+    }
+    .compare-badge.coral {
+      background: rgba(232, 115, 74, 0.15);
+      color: var(--pk-accent-coral);
+      border: 1px solid rgba(232, 115, 74, 0.3);
+    }
+    .compare-features {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .compare-features li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .compare-features li svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .status-quo .compare-features li svg {
+      color: #94a3b8;
+    }
+    .innovate-health .compare-features li svg {
+      color: var(--pk-accent-coral);
+    }
+    .compare-features strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .status-quo .compare-features p {
+      color: var(--pk-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .innovate-health .compare-features p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    @media (min-width: 992px) {
+      .innovate-health::before {
+        content: 'VS';
+        position: absolute;
+        left: -24px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        background: var(--pk-white);
+        color: var(--pk-dark-green);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 0.85rem;
+        box-shadow: var(--shadow-md);
+        z-index: 10;
+        border: 2px solid var(--pk-bg-surface);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="edge-glow" aria-hidden="true"></div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar">
+    <a href="platform.html" class="announcement-link">
+      Built and tested inside a real clinic. <strong>See how it works</strong>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="InnovateHealth Home">
+        <div class="logo-mark">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M16 4C12 4 9 7 9 11C9 15 12 18 16 22C20 18 23 15 23 11C23 7 20 4 16 4Z" stroke="#1A2B28" stroke-width="2" fill="none"/>
+            <circle cx="16" cy="11" r="3" fill="#1A2B28"/>
+            <path d="M8 8C5 11 5 16 8 19" stroke="#1A2B28" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M24 8C27 11 27 16 24 19" stroke="#1A2B28" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <span class="logo-text">InnovateHealth</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="platform.html" class="nav-link" style="color: var(--pk-accent-coral);">Our Platform</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="#" class="btn-login">Log in</a>
+        <a href="contact.html" class="btn-cta-nav" id="nav-cta">Book a Demo</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close" style="display: none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+      <div class="mobile-nav-links">
+        <a href="platform.html" class="mobile-nav-link" style="color: var(--pk-accent-coral);">Our Platform</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
+      <div class="mobile-nav-footer">
+        <a href="#" class="btn-login mobile-login">Log in</a>
+        <a href="contact.html" class="btn-cta-nav mobile-cta">Book a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Platform Hero -->
+    <section class="platform-hero">
+      <div class="container animate-on-scroll">
+        <h1 class="headline-lg">One operating layer.<br>Every clinic workflow.</h1>
+        <p class="subheadline">We don't build point solutions. We build a unified operating system that supports the full patient journey—from first contact to post-visit follow-up.</p>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn-primary">See a Live Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layer Architecture -->
+    <section class="layer-architecture">
+      <div class="container animate-on-scroll">
+        <div class="section-header" style="text-align: center;">
+          <h2 class="section-headline">Built in <span class="accent-text">Layers</span></h2>
+          <p class="section-desc" style="margin: 0 auto;">We expand our platform in stages, ensuring each layer delivers measurable ROI in real clinics before moving to the next.</p>
+        </div>
+
+        <div class="architecture-grid">
+          <!-- Layer 1 -->
+          <div class="arch-card active">
+            <div class="arch-badge">CURRENT FOCUS</div>
+            <h3 class="arch-title">Layer 1: Front Desk</h3>
+            <p style="color: var(--pk-text-muted);">Automating the first touchpoint. Catch every call, book appointments, and handle FAQs 24/7.</p>
+            <ul class="arch-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pk-accent-coral)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                AI Voice Receptionist
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pk-accent-coral)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Automated Scheduling
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pk-accent-coral)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Missed Call Recovery
+              </li>
+            </ul>
+          </div>
+
+          <!-- Layer 2 -->
+          <div class="arch-card">
+            <h3 class="arch-title">Layer 2: Smart Intake</h3>
+            <p style="color: var(--pk-text-muted);">Removing the clipboard. Digital intake forms that automatically sync to the EMR before the patient arrives.</p>
+            <ul class="arch-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Dynamic digital forms
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Insurance verification
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Clinical prep summaries
+              </li>
+            </ul>
+          </div>
+
+          <!-- Layer 3 -->
+          <div class="arch-card">
+            <h3 class="arch-title">Layer 3: Connected Ops</h3>
+            <p style="color: var(--pk-text-muted);">The full operating system. Device-connected workflows, clinic-wide visibility, and automated playbooks.</p>
+            <ul class="arch-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Device integration (Vitals)
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Clinic oversight dashboard
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Automated patient follow-up
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Strip -->
+    <section class="integration-strip">
+      <div class="container animate-on-scroll">
+        <h2 style="font-family: var(--font-serif); font-weight: 400; font-size: 2rem; margin-bottom: 24px;">Works with your existing EMR</h2>
+        <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 40px;">No rip-and-replace required. InnovateHealth sits on top of your current scheduling and record systems.</p>
+        <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; opacity: 0.8;">
+          <div style="font-size: 1.5rem; font-weight: 700;">athenahealth</div>
+          <div style="font-size: 1.5rem; font-weight: 700;">Epic</div>
+          <div style="font-size: 1.5rem; font-weight: 700;">eClinicalWorks</div>
+          <div style="font-size: 1.5rem; font-weight: 700;">Cerner</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="different-section">
+      <div class="container animate-on-scroll">
+        <div class="section-header" style="text-align: center; margin-bottom: 64px;">
+          <div class="section-label">The InnovateHealth Difference</div>
+          <h2 class="section-headline">Beyond basic voice bots.</h2>
+          <p class="section-desc" style="margin: 0 auto;">Most healthcare AI adds another software tool for your staff to manage. We built an operating layer that actually reduces their workload.</p>
+        </div>
+
+        <div class="compare-split">
+          <!-- Status Quo Card -->
+          <div class="compare-card status-quo">
+            <div class="compare-card-header">
+              <h3>Generic "AI Bots"</h3>
+              <span class="compare-badge gray">Point Solution</span>
+            </div>
+            <ul class="compare-features">
+              <li>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <div>
+                  <strong>Disconnected</strong>
+                  <p>Answers calls, but fails to handle intake forms or direct EMR scheduling.</p>
+                </div>
+              </li>
+              <li>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <div>
+                  <strong>Built in a Lab</strong>
+                  <p>Engineered by software developers with zero real-world clinical experience.</p>
+                </div>
+              </li>
+              <li>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <div>
+                  <strong>Unsafe Boundaries</strong>
+                  <p>Often attempts to give medical advice or handle distressed patients poorly.</p>
+                </div>
+              </li>
+              <li>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <div>
+                  <strong>Adds Work</strong>
+                  <p>Creates unstructured transcripts that staff still have to read and manually input.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- InnovateHealth Card -->
+          <div class="compare-card innovate-health">
+            <div class="compare-bg-glow"></div>
+            <div class="compare-card-header">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="flex-shrink: 0;">
+                  <path d="M16 4C12 4 9 7 9 11C9 15 12 18 16 22C20 18 23 15 23 11C23 7 20 4 16 4Z" stroke="var(--pk-accent-coral)" stroke-width="2" fill="none"/>
+                  <circle cx="16" cy="11" r="3" fill="var(--pk-accent-coral)"/>
+                  <path d="M8 8C5 11 5 16 8 19" stroke="var(--pk-accent-coral)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                  <path d="M24 8C27 11 27 16 24 19" stroke="var(--pk-accent-coral)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                 </svg>
+                 <h3>InnovateHealth</h3>
+              </div>
+              <span class="compare-badge coral">Operating System</span>
+            </div>
+            <ul class="compare-features">
+              <li>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <div>
+                  <strong>Full Workflow Connect</strong>
+                  <p>Handles the call, sends the digital intake form, and books directly in your EMR.</p>
+                </div>
+              </li>
+              <li>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <div>
+                  <strong>Built in a Clinic</strong>
+                  <p>Tested and perfected daily inside Blessings Medical Clinic by practicing doctors.</p>
+                </div>
+              </li>
+              <li>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <div>
+                  <strong>Hard Boundaries</strong>
+                  <p>Never diagnoses. Instantly escalates clinical urgency to a human staff member.</p>
+                </div>
+              </li>
+              <li>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <div>
+                  <strong>Removes Work</strong>
+                  <p>Delivers structured, actionable data directly into fields so staff don't translate notes.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="founder-profile" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 16px;">
+              <div class="founder-photo-placeholder" style="width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;" title="Placeholder for Dr. Nikhil Gohokar's Photo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </div>
+              <div>
+                <strong style="display: block; font-size: 1.05rem;">Dr. Nikhil Gohokar</strong>
+                <span style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">Founder & Practicing Physician</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section style="padding: 100px 24px; text-align: center; background: var(--pk-bg-surface);">
+      <div class="container animate-on-scroll">
+        <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 24px;">Ready to upgrade your clinic operations?</h2>
+        <a href="contact.html" class="btn-primary" style="padding: 16px 36px; font-size: 1.1rem; background: var(--pk-accent-coral);">Book a Discovery Call</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+          <p class="footer-tagline">InnovateHealth. By your side.</p>
+          <p class="footer-copyright">© 2026 InnovateHealth. All rights reserved.</p>
+        </div>
+
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <ul>
+              <li><a href="platform.html">Our Platform</a></li>
+              <li><a href="index.html#faq">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=15"></script>
+</body>
+</html>

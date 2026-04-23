@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
   <!-- Edge Glow Vignette (Parakeet-style) -->
@@ -38,15 +38,31 @@
       </a>
 
       <div class="nav-links">
-        <a href="#" class="nav-link">How It Works</a>
-        <a href="#" class="nav-link">For Clinics</a>
-        <a href="#" class="nav-link">About</a>
-        <a href="#" class="nav-link">Talk to Us</a>
+        <a href="platform.html" class="nav-link">Our Platform</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </div>
 
       <div class="nav-actions">
         <a href="#" class="btn-login">Log in</a>
-        <a href="#" class="btn-cta-nav" id="nav-cta">Book a Demo</a>
+        <a href="contact.html" class="btn-cta-nav" id="nav-cta">Book a Demo</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close" style="display: none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+      <div class="mobile-nav-links">
+        <a href="platform.html" class="mobile-nav-link">Our Platform</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
+      <div class="mobile-nav-footer">
+        <a href="#" class="btn-login mobile-login">Log in</a>
+        <a href="contact.html" class="btn-cta-nav mobile-cta">Book a Demo</a>
       </div>
     </div>
   </nav>
@@ -468,6 +484,393 @@
       </div>
     </section>
 
+    <!-- Section 5: Built Inside a Real Clinic -->
+    <section class="clinic-proof-section" id="clinic-proof">
+      <div class="clinic-proof-bg" aria-hidden="true"></div>
+      <div class="container relative z-10">
+        <div class="clinic-proof-header animate-on-scroll">
+          <p class="section-eyebrow">Why InnovateHealth is different</p>
+          <h2 class="section-headline">Not built in a lab. <span class="accent-text">Built inside a real clinic.</span></h2>
+          <p class="section-desc">InnovateHealth was born at Blessings Medical Clinic, where Dr. Nikhil Gohokar — founder, CEO, and practicing physician — tests every workflow on real patients before it ships.</p>
+        </div>
+
+        <!-- Founder Quote Card -->
+        <div class="founder-block animate-on-scroll delay-100">
+          <div class="founder-quote-area">
+            <div class="quote-mark" aria-hidden="true">"</div>
+            <blockquote class="founder-quote">
+              We didn't start with a pitch deck. We started with a clinic that was drowning in missed calls and manual intake. InnovateHealth is the system I built to fix <em>my own</em> operations first.
+            </blockquote>
+            <div class="founder-info">
+              <div class="founder-avatar" style="background: rgba(26, 51, 44, 0.1); border: 2px dashed rgba(26, 51, 44, 0.3); display: flex; align-items: center; justify-content: center; overflow: hidden;" title="Placeholder for Dr. Nikhil Gohokar's Photo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--pk-dark-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span class="founder-verified">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+              </div>
+              <div class="founder-details">
+                <strong>Dr. Nikhil Gohokar</strong>
+                <span>Founder & CEO, InnovateHealth</span>
+                <span class="founder-role-sub">Practicing Physician · Blessings Medical Clinic</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="founder-visual-area">
+            <!-- Before/After Clinic Card -->
+            <div class="clinic-ba-card">
+              <div class="ba-tab-row">
+                <button class="ba-tab active" data-ba="before" id="ba-before-tab">Before</button>
+                <button class="ba-tab" data-ba="after" id="ba-after-tab">After</button>
+              </div>
+              <div class="ba-content" id="ba-content-before">
+                <div class="ba-item ba-pain">
+                  <div class="ba-icon-circle ba-red">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                  </div>
+                  <div class="ba-text">
+                    <span class="ba-label">Missed Calls</span>
+                    <span class="ba-value ba-value-red">30%+ unanswered</span>
+                  </div>
+                </div>
+                <div class="ba-item ba-pain">
+                  <div class="ba-icon-circle ba-red">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  </div>
+                  <div class="ba-text">
+                    <span class="ba-label">No-Show Rate</span>
+                    <span class="ba-value ba-value-red">18% average</span>
+                  </div>
+                </div>
+                <div class="ba-item ba-pain">
+                  <div class="ba-icon-circle ba-red">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                  </div>
+                  <div class="ba-text">
+                    <span class="ba-label">Intake</span>
+                    <span class="ba-value ba-value-red">Paper clipboards</span>
+                  </div>
+                </div>
+                <div class="ba-item ba-pain">
+                  <div class="ba-icon-circle ba-red">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  </div>
+                  <div class="ba-text">
+                    <span class="ba-label">Staff Time</span>
+                    <span class="ba-value ba-value-red">45+ hrs/week on admin</span>
+                  </div>
+                </div>
+              </div>
+              <div class="ba-content ba-hidden" id="ba-content-after">
+                <div class="ba-item ba-win">
+                  <div class="ba-icon-circle ba-green">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </div>
+                  <div class="ba-text">
+                    <span class="ba-label">Missed Calls</span>
+                    <span class="ba-value ba-value-green">0 missed — every call answered</span>
+                  </div>
+                </div>
+                <div class="ba-item ba-win">
+                  <div class="ba-icon-circle ba-green">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="ba-text">
+                    <span class="ba-label">No-Show Rate</span>
+                    <span class="ba-value ba-value-green">↓40% reduction</span>
+                  </div>
+                </div>
+                <div class="ba-item ba-win">
+                  <div class="ba-icon-circle ba-green">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                  </div>
+                  <div class="ba-text">
+                    <span class="ba-label">Intake</span>
+                    <span class="ba-value ba-value-green">Digital — auto-flows in</span>
+                  </div>
+                </div>
+                <div class="ba-item ba-win">
+                  <div class="ba-icon-circle ba-green">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                  </div>
+                  <div class="ba-text">
+                    <span class="ba-label">Staff Time</span>
+                    <span class="ba-value ba-value-green">Automated reminders & follow-up</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outcome Metrics Strip -->
+        <div class="outcome-strip animate-on-scroll delay-200">
+          <div class="outcome-item">
+            <div class="outcome-number" data-count="100">0</div>
+            <div class="outcome-unit">%</div>
+            <div class="outcome-label">calls answered</div>
+          </div>
+          <div class="outcome-divider"></div>
+          <div class="outcome-item">
+            <div class="outcome-number" data-count="40">0</div>
+            <div class="outcome-unit">%</div>
+            <div class="outcome-label">fewer no-shows</div>
+          </div>
+          <div class="outcome-divider"></div>
+          <div class="outcome-item">
+            <div class="outcome-number" data-count="45">0</div>
+            <div class="outcome-unit">hrs</div>
+            <div class="outcome-label">staff time saved / week</div>
+          </div>
+          <div class="outcome-divider"></div>
+          <div class="outcome-item">
+            <div class="outcome-number" data-count="1">0</div>
+            <div class="outcome-unit"></div>
+            <div class="outcome-label">real clinic pilot</div>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges-row animate-on-scroll delay-300">
+          <div class="trust-badge-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>HIPAA Compliant</span>
+          </div>
+          <div class="trust-badge-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>End-to-End Encrypted</span>
+          </div>
+          <div class="trust-badge-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Doctor-Led</span>
+          </div>
+          <div class="trust-badge-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>Real Clinic Tested</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 6: FAQ -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-header animate-on-scroll">
+            <p class="section-eyebrow">Common questions</p>
+            <h2 class="section-headline">Everything clinic owners <span class="accent-text">ask us.</span></h2>
+            <p class="section-desc">Straight answers from a team that runs a real clinic.</p>
+            <div class="faq-cta-aside">
+              <p class="faq-cta-text">Still have questions?</p>
+              <a href="#" class="btn-faq-contact">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                Talk to our team
+              </a>
+            </div>
+          </div>
+
+          <div class="faq-list animate-on-scroll delay-100">
+            <!-- FAQ 1 -->
+            <div class="faq-item" id="faq-item-1">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                <span class="faq-q-text">Is InnovateHealth HIPAA compliant?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-answer-1" role="region">
+                <div class="faq-answer-inner">
+                  <p>Yes. Patient data security isn't optional — it's foundational. InnovateHealth is built with HIPAA compliance at every layer: encrypted data in transit and at rest, role-based access controls, BAA-ready architecture, and audit logging. We treat compliance as infrastructure, not a checkbox.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item" id="faq-item-2">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                <span class="faq-q-text">Will this replace my front-desk staff?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-answer-2" role="region">
+                <div class="faq-answer-inner">
+                  <p>No — and that's by design. InnovateHealth handles the repetitive operational work: answering routine calls, sending reminders, managing intake forms, and backfilling cancelled slots. Your staff still handles exceptions, patient relationships, and anything requiring human judgment. The goal is to free them from process, not remove them from the clinic.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item" id="faq-item-3">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                <span class="faq-q-text">Does it integrate with our existing EMR?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-answer-3" role="region">
+                <div class="faq-answer-inner">
+                  <p>InnovateHealth is designed to work alongside your current systems — not replace them. We integrate with major EMR platforms including athenahealth, eClinicalWorks, Epic, ModMed, and others. Provider-required actions are handed off into your EMR rather than forcing doctors into a separate dashboard.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item" id="faq-item-4">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                <span class="faq-q-text">What happens when the AI can't handle a call?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-answer-4" role="region">
+                <div class="faq-answer-inner">
+                  <p>It escalates — immediately and gracefully. Any urgent, distressing, or clinically uncertain situation is routed to a human. InnovateHealth never diagnoses, prescribes, or makes independent clinical decisions. The AI handles the process; when judgment is needed, your team is brought in. That's a hard boundary, not a setting you can toggle off.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item" id="faq-item-5">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                <span class="faq-q-text">How long does setup take?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-answer-5" role="region">
+                <div class="faq-answer-inner">
+                  <p>Most clinics are live within two weeks. We start with a workflow discovery session to understand your scheduling rules, provider preferences, and operational patterns. From there, we configure the system to match how your clinic actually works — not a generic template. Onboarding includes hands-on training for your front-desk team.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item" id="faq-item-6">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                <span class="faq-q-text">What does it cost?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-answer-6" role="region">
+                <div class="faq-answer-inner">
+                  <p>Pricing is based on your clinic's size and call volume. We don't publish one-size-fits-all pricing because every clinic has different needs. What we can tell you: the ROI conversation is straightforward. If you're losing $150K+ per year to missed calls, no-shows, and unfilled slots, InnovateHealth pays for itself quickly. Book a demo and we'll walk through the numbers for your specific situation.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item" id="faq-item-7">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">
+                <span class="faq-q-text">Can older patients use the voice system?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+              </button>
+              <div class="faq-answer" id="faq-answer-7" role="region">
+                <div class="faq-answer-inner">
+                  <p>Absolutely. Breeze AI — our voice front desk — is designed to understand all age types, from a 22-year-old booking online to a 78-year-old calling about a prescription. It sounds human, speaks naturally, and handles the patience and clarity that older patients need. We test this with real patients in a real clinic — not simulated scenarios.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Get Started -->
+    <section class="get-started-section" id="get-started">
+      <div class="get-started-bg-accent" aria-hidden="true"></div>
+      <div class="container relative z-10">
+        <div class="get-started-header animate-on-scroll">
+          <p class="section-eyebrow">Get started</p>
+          <h2 class="section-headline">Live in your clinic <span class="accent-text">in three steps.</span></h2>
+          <p class="section-desc">No long contracts. No complex IT projects. Just a conversation, a configuration, and a go-live.</p>
+        </div>
+
+        <div class="steps-row">
+          <!-- Step 1 -->
+          <div class="gs-step animate-on-scroll">
+            <div class="gs-step-number">
+              <span>01</span>
+            </div>
+            <div class="gs-step-visual">
+              <div class="gs-icon-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </div>
+            </div>
+            <h3 class="gs-step-title">Discovery Call</h3>
+            <p class="gs-step-desc">We learn how your clinic works — scheduling rules, provider preferences, call patterns, and pain points. No sales pitch. Just understanding.</p>
+            <span class="gs-step-time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              30 min call
+            </span>
+          </div>
+
+          <!-- Connector -->
+          <div class="gs-connector animate-on-scroll delay-100" aria-hidden="true">
+            <svg width="48" height="24" viewBox="0 0 48 24" fill="none">
+              <path d="M0 12H40M40 12L32 4M40 12L32 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="gs-step animate-on-scroll delay-100">
+            <div class="gs-step-number">
+              <span>02</span>
+            </div>
+            <div class="gs-step-visual">
+              <div class="gs-icon-wrap gs-icon-config">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              </div>
+            </div>
+            <h3 class="gs-step-title">Configure & Train</h3>
+            <p class="gs-step-desc">We set up InnovateHealth to match your workflow — not a template. Your front desk gets hands-on training before anything goes live.</p>
+            <span class="gs-step-time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              ~1 week
+            </span>
+          </div>
+
+          <!-- Connector -->
+          <div class="gs-connector animate-on-scroll delay-200" aria-hidden="true">
+            <svg width="48" height="24" viewBox="0 0 48 24" fill="none">
+              <path d="M0 12H40M40 12L32 4M40 12L32 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="gs-step gs-step-final animate-on-scroll delay-200">
+            <div class="gs-step-number gs-step-number-accent">
+              <span>03</span>
+            </div>
+            <div class="gs-step-visual">
+              <div class="gs-icon-wrap gs-icon-live">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <span class="gs-live-pulse"></span>
+            </div>
+            <h3 class="gs-step-title">Go Live</h3>
+            <p class="gs-step-desc">InnovateHealth starts answering calls, booking appointments, and sending reminders. You start seeing results within the first week.</p>
+            <span class="gs-step-time gs-step-time-accent">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+              Day 1 results
+            </span>
+          </div>
+        </div>
+
+        <div class="gs-bottom-cta animate-on-scroll delay-300">
+          <a href="#" class="btn-primary gs-cta-btn" id="gs-cta-btn">
+            Book Your Discovery Call
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+          <p class="gs-cta-note">Free. No commitment. Takes 30 minutes.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section" id="cta">
       <div class="cta-bg-waves" aria-hidden="true">
@@ -490,94 +893,33 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-social">
-            <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
             <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
             <a href="#" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-            <a href="#" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.08c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.41z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48" fill="white"/></svg></a>
           </div>
           <p class="footer-tagline">InnovateHealth. By your side.</p>
-          <p class="footer-copyright">Â© 2026 InnovateHealth. All rights reserved.</p>
+          <p class="footer-copyright">© 2026 InnovateHealth. All rights reserved.</p>
         </div>
 
         <div class="footer-columns">
           <div class="footer-col">
-            <h4>Specialties</h4>
+            <h4>Platform</h4>
             <ul>
-              <li><a href="#">Family Medicine</a></li>
-              <li><a href="#">Specialists</a></li>
-              <li><a href="#">Nurses</a></li>
-              <li><a href="#">Mental Health</a></li>
-              <li><a href="#">Allied Health</a></li>
-              <li><a href="#">Dentists</a></li>
-              <li><a href="#">Veterinarians</a></li>
-              <li><a href="#">Trainees</a></li>
+              <li><a href="platform.html">Our Platform</a></li>
+              <li><a href="#faq">FAQs</a></li>
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Compliance</h4>
+            <h4>Company</h4>
             <ul>
-              <li><a href="#">Safety</a></li>
-              <li><a href="#">Trust Center</a></li>
-              <li><a href="#">AU/NZ</a></li>
-              <li><a href="#">Canada</a></li>
-              <li><a href="#">UK</a></li>
-              <li><a href="#">GDPR</a></li>
-              <li><a href="#">HIPAA</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Product</h4>
-            <ul>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Changelog</a></li>
-              <li><a href="#">Downloads</a></li>
-              <li><a href="#">InnovateHealth Guides</a></li>
-              <li><a href="#">Help Centre</a></li>
-              <li><a href="#">System Status</a></li>
-              <li><a href="#">System Requirements</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>About Us</h4>
-            <ul>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Company</a></li>
-              <li><a href="#">Customer Stories</a></li>
-              <li><a href="#">Media</a></li>
-              <li><a href="#">Open Roles <span class="pill-badge">10+</span></a></li>
-              <li><a href="#">People</a></li>
-              <li><a href="#">Partnerships</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-divider"></div>
-
-      <div class="footer-bottom">
-        <div class="footer-bottom-brand">
-          <span class="footer-logo-text">âŠ› InnovateHealth</span>
-        </div>
-        <div class="footer-bottom-cols">
-          <div class="footer-col">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">ROI Calculator</a></li>
-              <li><a href="#">Resource Centre</a></li>
-              <li><a href="#">Template Community</a></li>
-              <li><a href="#">FAQs</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>Legal</h4>
             <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Usage Policy</a></li>
-              <li><a href="#">UKGDPR Policy</a></li>
-              <li><a href="#">Accessibility</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
             </ul>
           </div>
         </div>
@@ -650,6 +992,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=15"></script>
 </body>
 </html>

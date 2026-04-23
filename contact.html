@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book a demo with InnovateHealth to see how our operating layer can transform your clinic's front desk and patient flow.">
+  <title>Book a Demo | InnovateHealth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=15">
+  <style>
+    .contact-hero {
+      padding: 80px 24px 60px;
+      text-align: center;
+      background: var(--pk-bg-light);
+    }
+    .contact-hero h1 {
+      font-size: 3.5rem;
+      font-family: var(--font-serif);
+      font-weight: 500;
+      color: var(--pk-dark-green);
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+    .contact-hero p {
+      font-size: 1.1rem;
+      color: var(--pk-text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-section {
+      padding: 40px 24px 100px;
+      background: var(--pk-bg-light);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media (min-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1.5fr 1fr;
+      }
+    }
+    .form-container {
+      background: white;
+      padding: 40px;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--pk-divider);
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--pk-dark-green);
+    }
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid rgba(26, 51, 44, 0.2);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--pk-accent-coral);
+      box-shadow: 0 0 0 3px var(--pk-accent-coral-glow);
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      font-size: 1.1rem;
+      background: var(--pk-accent-coral);
+      color: white;
+      border: none;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-submit:hover {
+      background: #d65a38;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(232, 115, 74, 0.3);
+    }
+    .info-container {
+      padding: 20px 0;
+    }
+    .info-card {
+      background: var(--pk-white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 32px;
+      border: 1px solid var(--pk-divider);
+    }
+    .info-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: var(--pk-dark-green);
+    }
+    .expect-list {
+      margin-bottom: 24px;
+    }
+    .expect-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      color: var(--pk-text-muted);
+      line-height: 1.5;
+    }
+    .contact-details h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--pk-text-muted);
+      margin-bottom: 12px;
+      margin-top: 24px;
+    }
+    .contact-details p {
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="edge-glow" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="InnovateHealth Home">
+        <div class="logo-mark">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M16 4C12 4 9 7 9 11C9 15 12 18 16 22C20 18 23 15 23 11C23 7 20 4 16 4Z" stroke="#1A2B28" stroke-width="2" fill="none"/>
+            <circle cx="16" cy="11" r="3" fill="#1A2B28"/>
+            <path d="M8 8C5 11 5 16 8 19" stroke="#1A2B28" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M24 8C27 11 27 16 24 19" stroke="#1A2B28" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <span class="logo-text">InnovateHealth</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="platform.html" class="nav-link">Our Platform</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link" style="color: var(--pk-accent-coral);">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="#" class="btn-login">Log in</a>
+        <a href="contact.html" class="btn-cta-nav" id="nav-cta">Book a Demo</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close" style="display: none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+      <div class="mobile-nav-links">
+        <a href="platform.html" class="mobile-nav-link">Our Platform</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="contact.html" class="mobile-nav-link" style="color: var(--pk-accent-coral);">Contact</a>
+      </div>
+      <div class="mobile-nav-footer">
+        <a href="#" class="btn-login mobile-login">Log in</a>
+        <a href="contact.html" class="btn-cta-nav mobile-cta">Book a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="contact-hero">
+      <div class="container animate-on-scroll">
+        <h1>Let's talk workflow.</h1>
+        <p>Book a discovery call to see how InnovateHealth can automate your front desk, reduce staff burnout, and recover lost revenue.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <!-- Left: Form -->
+          <div class="form-container animate-on-scroll">
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Form submitted! We will be in touch shortly.');">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" class="form-control" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="clinicName">Clinic / Organization Name</label>
+                <input type="text" id="clinicName" name="clinicName" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control">
+              </div>
+
+              <div class="form-group">
+                <label for="challenge">Biggest Operational Challenge</label>
+                <select id="challenge" name="challenge" class="form-control" required>
+                  <option value="" disabled selected>Select an option...</option>
+                  <option value="missed_calls">Too many missed calls</option>
+                  <option value="staff_burnout">Staff burnout & turnover</option>
+                  <option value="no_shows">High no-show rates</option>
+                  <option value="intake">Manual intake & clipboard forms</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Anything else we should know? (Optional)</label>
+                <textarea id="message" name="message" class="form-control" placeholder="E.g., what EMR do you use?"></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit">Request Demo</button>
+            </form>
+          </div>
+
+          <!-- Right: Info -->
+          <div class="info-container animate-on-scroll delay-100">
+            <div class="info-card">
+              <h3>What to expect</h3>
+              <ul class="expect-list">
+                <li>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--pk-accent-coral)" stroke-width="2" style="flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  <span><strong>A 30-minute discovery call</strong> to understand your specific clinic workflows.</span>
+                </li>
+                <li>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--pk-accent-coral)" stroke-width="2" style="flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  <span><strong>No high-pressure sales pitch.</strong> We are doctors and operators, not salespeople.</span>
+                </li>
+                <li>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--pk-accent-coral)" stroke-width="2" style="flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  <span><strong>A custom demonstration</strong> of how InnovateHealth integrates with your EMR.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-details">
+              <h4>Email Us Directly</h4>
+              <p><a href="mailto:hello@innovatehealth.ai" style="color: var(--pk-dark-green); text-decoration: underline;">hello@innovatehealth.ai</a></p>
+              
+              <h4>Headquarters</h4>
+              <p style="color: var(--pk-text-muted); font-size: 0.95rem; line-height: 1.5;">
+                InnovateHealth Inc.<br>
+                San Francisco, CA<br>
+                Tested & Perfected at Blessings Medical Clinic
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+          <p class="footer-tagline">InnovateHealth. By your side.</p>
+          <p class="footer-copyright">© 2026 InnovateHealth. All rights reserved.</p>
+        </div>
+
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <ul>
+              <li><a href="platform.html">Our Platform</a></li>
+              <li><a href="index.html#faq">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=15"></script>
+</body>
+</html>

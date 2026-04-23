@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="InnovateHealth is a healthcare operations company built inside a real clinic by a practicing physician.">
+  <title>About Us | InnovateHealth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=15">
+  <style>
+    /* ── Hero ── */
+    .abt-hero{padding:clamp(120px,14vw,180px) 24px clamp(60px,8vw,100px);background:var(--pk-bg-light);text-align:center}
+    .abt-hero .eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pk-accent-coral);margin-bottom:20px}
+    .abt-hero h1{font-family:var(--font-serif);font-size:clamp(2.8rem,6vw,4.2rem);line-height:1.08;letter-spacing:-.02em;color:var(--pk-text-main);font-weight:400;max-width:800px;margin:0 auto 28px}
+    .abt-hero h1 em{font-style:italic;color:var(--pk-dark-green)}
+    .abt-hero .subtitle{font-size:1.15rem;line-height:1.65;color:var(--pk-text-muted);max-width:620px;margin:0 auto 40px}
+    .abt-hero .proof-strip{display:inline-flex;align-items:center;gap:10px;font-size:.85rem;font-weight:500;color:var(--pk-text-muted);background:var(--pk-white);padding:10px 20px;border-radius:var(--radius-pill);border:1px solid var(--pk-divider);box-shadow:var(--shadow-sm)}
+    .abt-hero .proof-strip svg{color:var(--pk-accent-coral);flex-shrink:0}
+
+    /* ── Story ── */
+    .abt-story{padding:clamp(80px,10vw,140px) 24px;background:var(--pk-white)}
+    .abt-story-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:48px}
+    @media(min-width:768px){.abt-story-inner{grid-template-columns:4fr 6fr;gap:64px;align-items:start}}
+    .abt-story .label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pk-accent-coral);margin-bottom:16px}
+    .abt-story .pull-quote{font-family:var(--font-serif);font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.25;color:var(--pk-dark-green);position:relative;padding-left:20px;border-left:3px solid var(--pk-accent-coral)}
+    .abt-story .narrative p{font-size:1.05rem;line-height:1.7;color:var(--pk-text-muted);margin-bottom:20px}
+    .abt-story .narrative p:last-child{margin-bottom:0}
+    .abt-story .narrative strong{color:var(--pk-text-main)}
+
+    /* ── Belief ── */
+    .abt-belief{padding:clamp(80px,10vw,140px) 24px;background:var(--pk-bg-surface);border-top:1px solid var(--pk-divider);border-bottom:1px solid var(--pk-divider)}
+    .abt-belief-inner{max-width:800px;margin:0 auto;text-align:center}
+    .abt-belief h2{font-family:var(--font-serif);font-size:clamp(2rem,4.5vw,3rem);line-height:1.15;color:var(--pk-text-main);font-weight:400;margin-bottom:32px}
+    .abt-belief h2 span{position:relative;display:inline-block}
+    .abt-belief h2 span::after{content:'';position:absolute;left:0;bottom:-4px;width:100%;height:3px;background:var(--pk-accent-coral);border-radius:2px}
+    .abt-belief .beliefs{display:grid;grid-template-columns:1fr;gap:20px;margin-top:48px;text-align:left}
+    @media(min-width:768px){.abt-belief .beliefs{grid-template-columns:1fr 1fr 1fr}}
+    .belief-item{padding:28px 24px;background:var(--pk-white);border-radius:var(--radius-lg);border:1px solid var(--pk-divider)}
+    .belief-item h4{font-size:1rem;font-weight:600;color:var(--pk-text-main);margin-bottom:8px}
+    .belief-item p{font-size:.9rem;color:var(--pk-text-muted);line-height:1.55}
+
+    /* ── Clarity (We Are / We Are Not) ── */
+    .abt-clarity{padding:clamp(80px,10vw,140px) 24px;background:var(--pk-white)}
+    .abt-clarity-inner{max-width:960px;margin:0 auto}
+    .abt-clarity h2{font-family:var(--font-serif);font-size:clamp(2rem,4vw,2.75rem);text-align:center;color:var(--pk-text-main);margin-bottom:56px;font-weight:400}
+    .clarity-cols{display:grid;grid-template-columns:1fr;gap:32px}
+    @media(min-width:768px){.clarity-cols{grid-template-columns:1fr 1fr;gap:48px}}
+    .cl-col h3{font-size:1.1rem;font-weight:600;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--pk-dark-green);color:var(--pk-text-main);display:flex;align-items:center;gap:10px}
+    .cl-col.not h3{border-color:var(--pk-accent-coral)}
+    .cl-col li{display:flex;gap:12px;align-items:flex-start;margin-bottom:18px;font-size:.95rem;color:var(--pk-text-muted);line-height:1.5}
+    .cl-col li svg{flex-shrink:0;margin-top:2px}
+    .cl-col.yes li svg{color:var(--pk-dark-green)}
+    .cl-col.not li svg{color:var(--pk-accent-coral)}
+
+    /* ── Founder ── */
+    .abt-founder{padding:clamp(80px,10vw,140px) 24px;background:var(--pk-bg-surface);border-top:1px solid var(--pk-divider)}
+    .abt-founder-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+    @media(min-width:768px){.abt-founder-inner{grid-template-columns:280px 1fr;gap:56px}}
+    .founder-photo{width:100%;max-width:280px;aspect-ratio:1/1;border-radius:50%;background:linear-gradient(135deg,var(--pk-sage-light),var(--pk-bg-light));border:4px solid var(--pk-white);box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center;margin:0 auto;overflow:hidden}
+    .founder-photo svg{opacity:.4;color:var(--pk-dark-green)}
+    .founder-right .fq{font-family:var(--font-serif);font-size:clamp(1.35rem,2.5vw,1.75rem);line-height:1.35;color:var(--pk-text-main);margin-bottom:20px;position:relative;padding-left:20px}
+    .founder-right .fq::before{content:'"';position:absolute;left:-4px;top:-8px;font-family:var(--font-serif);font-size:3rem;color:var(--pk-accent-coral);line-height:1}
+    .founder-right .fname{font-size:1rem;font-weight:600;color:var(--pk-text-main)}
+    .founder-right .frole{font-size:.875rem;color:var(--pk-text-muted);margin-bottom:16px}
+    .founder-right .fbio{font-size:1rem;line-height:1.65;color:var(--pk-text-muted)}
+
+    /* ── Trust ── */
+    .abt-trust{padding:clamp(72px,9vw,120px) 24px;background:var(--pk-dark-green);color:var(--pk-white)}
+    .abt-trust-inner{max-width:960px;margin:0 auto;text-align:center}
+    .abt-trust h2{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:16px;font-weight:400}
+    .abt-trust>div>p{font-size:1.05rem;color:rgba(255,255,255,.75);margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6}
+    .trust-row{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.1);border-radius:var(--radius-lg);overflow:hidden}
+    @media(min-width:768px){.trust-row{grid-template-columns:1fr 1fr 1fr}}
+    .trust-cell{background:var(--pk-dark-green);padding:36px 28px;text-align:left}
+    .trust-cell h4{font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--pk-white)}
+    .trust-cell p{font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.5}
+
+    /* ── CTA ── */
+    .abt-cta{padding:clamp(80px,10vw,120px) 24px;text-align:center;background:var(--pk-bg-light)}
+    .abt-cta h2{font-family:var(--font-serif);font-size:clamp(2rem,4vw,2.75rem);color:var(--pk-text-main);margin-bottom:16px;font-weight:400}
+    .abt-cta p{font-size:1.1rem;color:var(--pk-text-muted);margin-bottom:36px;max-width:540px;margin-left:auto;margin-right:auto}
+    .abt-cta .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .abt-cta .btn-p{background:var(--pk-dark-green);color:#fff;padding:14px 32px;border-radius:var(--radius-pill);font-weight:600;font-size:.95rem;transition:all .25s;box-shadow:var(--shadow-sm)}
+    .abt-cta .btn-p:hover{background:var(--pk-dark-green-hover);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+    .abt-cta .btn-s{background:transparent;color:var(--pk-text-main);padding:14px 32px;border-radius:var(--radius-pill);font-weight:600;font-size:.95rem;border:1px solid var(--pk-divider);transition:all .25s}
+    .abt-cta .btn-s:hover{border-color:var(--pk-dark-green);background:rgba(26,51,44,.04)}
+  </style>
+</head>
+<body>
+  <div class="edge-glow" aria-hidden="true"></div>
+
+  <div class="announcement-bar" id="announcement-bar">
+    <a href="platform.html" class="announcement-link">
+      Built and tested inside a real clinic. Not an AI lab. <strong>See how it works</strong>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </div>
+
+  <nav class="navbar" id="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="InnovateHealth Home">
+        <div class="logo-mark"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4C12 4 9 7 9 11C9 15 12 18 16 22C20 18 23 15 23 11C23 7 20 4 16 4Z" stroke="#1A2B28" stroke-width="2" fill="none"/><circle cx="16" cy="11" r="3" fill="#1A2B28"/><path d="M8 8C5 11 5 16 8 19" stroke="#1A2B28" stroke-width="1.5" stroke-linecap="round" fill="none"/><path d="M24 8C27 11 27 16 24 19" stroke="#1A2B28" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div>
+        <span class="logo-text">InnovateHealth</span>
+      </a>
+      <div class="nav-links">
+        <a href="platform.html" class="nav-link">Our Platform</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="btn-login">Log in</a>
+        <a href="contact.html" class="btn-cta-nav" id="nav-cta">Book a Demo</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close" style="display:none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+      </div>
+    </div>
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+      <div class="mobile-nav-links">
+        <a href="platform.html" class="mobile-nav-link">Our Platform</a>
+        <a href="about.html" class="mobile-nav-link active">About</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
+      <div class="mobile-nav-footer">
+        <a href="#" class="btn-login mobile-login">Log in</a>
+        <a href="contact.html" class="btn-cta-nav mobile-cta">Book a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="abt-hero">
+      <div class="container animate-on-scroll">
+        <p class="eyebrow">Our Story</p>
+        <h1>A healthcare operations company.<br><em>Built inside a real clinic.</em></h1>
+        <p class="subtitle">We exist because independent clinics lose time, revenue, and care quality to fragmented workflows — not because they lack good doctors. AI is our tool, not our identity.</p>
+        <div class="proof-strip">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          Founded by a practicing physician · Tested at Blessings Medical Clinic
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="abt-story">
+      <div class="abt-story-inner">
+        <div class="animate-on-scroll">
+          <p class="label">The problem</p>
+          <div class="pull-quote">The front desk was drowning. But the answer was never more staff — it was fewer loose ends.</div>
+        </div>
+        <div class="narrative animate-on-scroll delay-100">
+          <p>At Blessings Medical Clinic, the pattern was the same every week: <strong>phones rang unanswered during peak hours</strong>. Patients filled out the same paper forms visit after visit. Reminders went unsent. Follow-ups fell through the cracks. The staff wasn't failing — the workflow was.</p>
+          <p>Dr. Nikhil Gohokar, the clinic's owner and a practicing physician, realized the problem wasn't a lack of effort or tools. It was that <strong>every tool lived in its own silo</strong>. The phone system didn't talk to the schedule. The intake forms didn't flow into the chart. Nothing was connected.</p>
+          <p>He didn't go looking for an AI vendor. He started building the connective tissue his clinic actually needed — a layer that handles calls, intake, scheduling, reminders, and follow-up as one continuous workflow. That became InnovateHealth.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BELIEF -->
+    <section class="abt-belief">
+      <div class="abt-belief-inner animate-on-scroll">
+        <h2>Clinics don't need more software.<br>They need <span>fewer loose ends</span>.</h2>
+        <div class="beliefs">
+          <div class="belief-item">
+            <h4>Doctors should focus on medicine</h4>
+            <p>The platform handles operational workflow so providers never need another dashboard to check.</p>
+          </div>
+          <div class="belief-item">
+            <h4>The EMR stays the source of truth</h4>
+            <p>We push data into your existing system. We don't compete with it or ask you to replace it.</p>
+          </div>
+          <div class="belief-item">
+            <h4>Staff should handle what needs a human</h4>
+            <p>Routine calls, reminders, and intake are automated. Your team focuses on care that requires judgment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLARITY -->
+    <section class="abt-clarity">
+      <div class="abt-clarity-inner animate-on-scroll">
+        <h2>Clear about what we are.</h2>
+        <div class="clarity-cols">
+          <div class="cl-col yes">
+            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pk-dark-green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> What we are</h3>
+            <ul>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>A healthcare operations platform for independent clinics</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>A connected layer for calls, intake, scheduling, and follow-up</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Built and proven inside a live medical clinic</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Designed to keep the EMR as the single source of truth</li>
+            </ul>
+          </div>
+          <div class="cl-col not">
+            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--pk-accent-coral)" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> What we are not</h3>
+            <ul>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>An AI chatbot company looking for a medical use case</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>A replacement for your existing EMR system</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>A diagnostic tool or medical device</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>Another dashboard doctors have to learn</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section class="abt-founder">
+      <div class="abt-founder-inner animate-on-scroll">
+        <div class="founder-photo">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <div class="founder-right">
+          <div class="fq">We didn't start with a pitch deck. We started with a clinic that was drowning — and built the system to fix it ourselves.</div>
+          <div class="fname">Dr. Nikhil Gohokar</div>
+          <div class="frole">Founder & CEO · Practicing Physician · Blessings Medical Clinic</div>
+          <p class="fbio">Dr. Gohokar runs Blessings Medical Clinic full-time. Every InnovateHealth feature is piloted inside his clinic — on real patients, real staff, real workflows — before it is ever offered to another practice. The company is shaped by live clinic reality, not market speculation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="abt-trust">
+      <div class="abt-trust-inner animate-on-scroll">
+        <h2>Why clinics trust us.</h2>
+        <p>We prove it internally before we pitch it externally.</p>
+        <div class="trust-row">
+          <div class="trust-cell">
+            <h4>Patients can always reach a human</h4>
+            <p>Automation handles the routine. Anything complex or urgent goes to your staff instantly.</p>
+          </div>
+          <div class="trust-cell">
+            <h4>No second dashboard for doctors</h4>
+            <p>We write data directly into your EMR. Providers never need to open another screen.</p>
+          </div>
+          <div class="trust-cell">
+            <h4>Measured, not promised</h4>
+            <p>We track real outcomes — missed calls recovered, intake time saved, no-show rates reduced.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="abt-cta">
+      <div class="container animate-on-scroll">
+        <h2>See it working in a real clinic.</h2>
+        <p>No sales pitch. Just a walkthrough of what InnovateHealth does inside Blessings Medical Clinic every day.</p>
+        <div class="cta-btns">
+          <a href="contact.html" class="btn-p">Book a Demo</a>
+          <a href="platform.html" class="btn-s">Explore the Platform</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+          <p class="footer-tagline">InnovateHealth. By your side.</p>
+          <p class="footer-copyright">&copy; 2026 InnovateHealth. All rights reserved.</p>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-col"><h4>Platform</h4><ul><li><a href="platform.html">Our Platform</a></li><li><a href="index.html#faq">FAQs</a></li></ul></div>
+          <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+          <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=15"></script>
+</body>
+</html>

@@ -1,4 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+  const iconMenu = mobileMenuBtn?.querySelector('.icon-menu');
+  const iconClose = mobileMenuBtn?.querySelector('.icon-close');
+
+  if (mobileMenuBtn && mobileMenuDrawer) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = mobileMenuDrawer.classList.contains('open');
+      if (isOpen) {
+        mobileMenuDrawer.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        if (iconMenu) iconMenu.style.display = 'block';
+        if (iconClose) iconClose.style.display = 'none';
+      } else {
+        mobileMenuDrawer.classList.add('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        if (iconMenu) iconMenu.style.display = 'none';
+        if (iconClose) iconClose.style.display = 'block';
+      }
+    });
+
+    // Close menu when clicking a link
+    const mobileLinks = mobileMenuDrawer.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuDrawer.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        if (iconMenu) iconMenu.style.display = 'block';
+        if (iconClose) iconClose.style.display = 'none';
+      });
+    });
+  }
+
   // Intersection Observer for scroll animations
   const observerOptions = {
     root: null,
@@ -178,4 +215,92 @@ document.addEventListener('DOMContentLoaded', () => {
       openPanel();
     });
   }
+
+  // ── Before / After Tab Toggle ──
+  const baTabs = document.querySelectorAll('.ba-tab');
+  const baContentBefore = document.getElementById('ba-content-before');
+  const baContentAfter = document.getElementById('ba-content-after');
+
+  baTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      baTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const target = tab.getAttribute('data-ba');
+      if (target === 'before') {
+        baContentBefore.classList.remove('ba-hidden');
+        baContentAfter.classList.add('ba-hidden');
+      } else {
+        baContentBefore.classList.add('ba-hidden');
+        baContentAfter.classList.remove('ba-hidden');
+      }
+    });
+  });
+
+  // ── Animated Count-Up for Outcome Metrics ──
+  const outcomeNumbers = document.querySelectorAll('.outcome-number[data-count]');
+  let countUpTriggered = false;
+
+  function animateCountUp(el) {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    const duration = 1800; // ms
+    const start = performance.now();
+
+    function step(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = current;
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  if (outcomeNumbers.length > 0) {
+    const countUpObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !countUpTriggered) {
+          countUpTriggered = true;
+          outcomeNumbers.forEach(el => animateCountUp(el));
+          countUpObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+
+    const outcomeStrip = document.querySelector('.outcome-strip');
+    if (outcomeStrip) {
+      countUpObserver.observe(outcomeStrip);
+    }
+  }
+
+  // ── FAQ Accordion ──
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      // Close all other items (single-open accordion)
+      faqItems.forEach(other => {
+        other.classList.remove('open');
+        const otherBtn = other.querySelector('.faq-question');
+        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle current item
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 });
+
