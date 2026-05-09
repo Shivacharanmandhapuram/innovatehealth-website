@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=17">
   <style>
     .contact-hero {
       padding: 80px 24px 60px;
@@ -97,6 +97,34 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(232, 115, 74, 0.3);
     }
+    .sms-consent {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 16px;
+      border: 1px solid rgba(26, 51, 44, 0.14);
+      border-radius: var(--radius-sm);
+      background: rgba(193, 215, 205, 0.16);
+      margin-bottom: 24px;
+    }
+    .sms-consent input {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--pk-accent-coral);
+    }
+    .sms-consent label {
+      margin: 0;
+      color: var(--pk-text-muted);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    .sms-consent a {
+      color: var(--pk-dark-green);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
     .info-container {
       padding: 20px 0;
     }
@@ -146,15 +174,7 @@
   <nav class="navbar" id="main-nav">
     <div class="nav-container">
       <a href="index.html" class="nav-logo" aria-label="InnovateHealth Home">
-        <div class="logo-mark">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <path d="M16 4C12 4 9 7 9 11C9 15 12 18 16 22C20 18 23 15 23 11C23 7 20 4 16 4Z" stroke="#1A2B28" stroke-width="2" fill="none"/>
-            <circle cx="16" cy="11" r="3" fill="#1A2B28"/>
-            <path d="M8 8C5 11 5 16 8 19" stroke="#1A2B28" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M24 8C27 11 27 16 24 19" stroke="#1A2B28" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          </svg>
-        </div>
-        <span class="logo-text">InnovateHealth</span>
+        <img src="files/logos/3-cropped.png" alt="InnovateHealth" class="nav-logo-image">
       </a>
 
       <div class="nav-links">
@@ -228,6 +248,13 @@
                 <input type="tel" id="phone" name="phone" class="form-control">
               </div>
 
+              <div class="sms-consent" id="sms-consent">
+                <input type="checkbox" id="smsOptIn" name="smsOptIn" value="yes">
+                <label for="smsOptIn">
+                  I agree to receive operational and informational text messages from Innovate Health AI about demo scheduling, clinic workflow follow-up, service updates, and support. Message frequency varies. Message and data rates may apply. Reply STOP to opt out and HELP for help. Consent is not a condition of purchase. See our <a href="privacy.html#sms-communications">Privacy Policy</a> and <a href="terms.html#sms-terms">Terms and Conditions</a>.
+                </label>
+              </div>
+
               <div class="form-group">
                 <label for="challenge">Biggest Operational Challenge</label>
                 <select id="challenge" name="challenge" class="form-control" required>
@@ -264,7 +291,7 @@
                 </li>
                 <li>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--pk-accent-coral)" stroke-width="2" style="flex-shrink: 0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                  <span><strong>A custom demonstration</strong> of how InnovateHealth integrates with your EMR.</span>
+                  <span><strong>A custom demonstration</strong> of how InnovateHealth can fit around your existing clinic workflows.</span>
                 </li>
               </ul>
             </div>
@@ -275,9 +302,9 @@
               
               <h4>Headquarters</h4>
               <p style="color: var(--pk-text-muted); font-size: 0.95rem; line-height: 1.5;">
-                InnovateHealth Inc.<br>
-                San Francisco, CA<br>
-                Tested & Perfected at Blessings Medical Clinic
+                InnovateCare LLC d/b/a Innovate Health AI<br>
+                Texas, United States<br>
+                Built and tested inside a real clinic
               </p>
             </div>
           </div>
@@ -290,43 +317,100 @@
 
   <!-- Footer -->
   <footer class="footer" id="footer">
-    <div class="footer-container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="footer-social">
-            <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-            <a href="#" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <!-- Footer CTA Band -->
+    <div class="footer-cta-band">
+      <div class="footer-cta-inner">
+        <div class="footer-cta-text">
+          <h2 class="footer-cta-headline">Ready to reclaim your front desk?</h2>
+          <p class="footer-cta-sub">See InnovateHealth running inside a real clinic — live, in 30 minutes.</p>
+        </div>
+        <a href="contact.html" class="footer-cta-btn">Book a Demo</a>
+      </div>
+    </div>
+
+    <!-- Footer Main -->
+    <div class="footer-main">
+      <div class="footer-container">
+
+        <!-- Top Row: Brand + Columns -->
+        <div class="footer-grid">
+
+          <!-- Brand Column -->
+          <div class="footer-brand-col">
+            <img src="files/logos/1-cropped.png" alt="InnovateHealth" class="footer-brand-logo">
+            <p class="footer-tagline">Healthcare operations, simplified.</p>
+            <div class="footer-badges">
+              <a href="privacy.html#hipaa-compliance" class="footer-hipaa-badge" aria-label="Read about HIPAA safeguards">
+                <img src="files/logos/hipaa-compliant.svg" alt="HIPAA compliance information" class="footer-hipaa-logo">
+              </a>
+              <span class="footer-badge-pill">SOC 2 In Progress</span>
+              <span class="footer-badge-pill">Made in Texas</span>
+            </div>
+            <div class="footer-partner-badge" aria-label="Supported by Microsoft for Startups">
+              <span class="footer-microsoft-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              <span>Supported by Microsoft for Startups</span>
+            </div>
           </div>
-          <p class="footer-tagline">InnovateHealth. By your side.</p>
-          <p class="footer-copyright">© 2026 InnovateHealth. All rights reserved.</p>
+
+          <!-- Product Column -->
+          <div class="footer-col">
+            <h4 class="footer-col-heading">Product</h4>
+            <ul class="footer-col-links">
+              <li><a href="platform.html">Platform Overview</a></li>
+              <li><a href="platform.html#capabilities">AI Voice Front Desk</a></li>
+              <li><a href="platform.html#capabilities">Smart Scheduling</a></li>
+              <li><a href="platform.html#capabilities">Digital Intake</a></li>
+              <li><a href="platform.html#capabilities">Reminders & Follow-Up</a></li>
+            </ul>
+          </div>
+
+          <!-- Company Column -->
+          <div class="footer-col">
+            <h4 class="footer-col-heading">Company</h4>
+            <ul class="footer-col-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="about.html#founder">Our Story</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal Column -->
+          <div class="footer-col">
+            <h4 class="footer-col-heading">Legal & Compliance</h4>
+            <ul class="footer-col-links">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms and Conditions</a></li>
+              <li><a href="privacy.html#hipaa-compliance">HIPAA Compliance</a></li>
+              <li><a href="privacy.html#data-security">Data Security</a></li>
+            </ul>
+          </div>
+
         </div>
 
-        <div class="footer-columns">
-          <div class="footer-col">
-            <h4>Platform</h4>
-            <ul>
-              <li><a href="platform.html">Our Platform</a></li>
-              <li><a href="index.html#faq">FAQs</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Service</a></li>
-            </ul>
+        <!-- Divider -->
+        <div class="footer-divider-line"></div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <p class="footer-copyright">© 2026 InnovateCare LLC d/b/a Innovate Health AI. All rights reserved.</p>
+          <div class="footer-social-row">
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
           </div>
         </div>
+
       </div>
     </div>
   </footer>
+
 
   <script src="script.js?v=15"></script>
 </body>

@@ -3,53 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Privacy Policy for InnovateHealth. Learn how we handle data and maintain HIPAA compliance.">
+  <meta name="description" content="Privacy Policy for Innovate Health AI, a healthcare operations company for independent clinics.">
   <title>Privacy Policy | InnovateHealth</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=17">
   <style>
-    .legal-hero {
-      padding: 100px 24px 60px;
-      text-align: center;
-      background: var(--pk-bg-light);
-    }
-    .legal-hero h1 {
-      font-size: 3rem;
-      font-family: var(--font-serif);
-      font-weight: 500;
-      color: var(--pk-dark-green);
-      margin-bottom: 16px;
-    }
-    .legal-hero p {
-      color: var(--pk-text-muted);
-    }
-    .legal-content {
-      padding: 60px 24px 100px;
-      background: white;
-    }
-    .legal-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .legal-container h2 {
-      font-size: 1.5rem;
-      color: var(--pk-dark-green);
-      margin-top: 40px;
-      margin-bottom: 16px;
-    }
-    .legal-container p, .legal-container ul {
-      color: var(--pk-text-muted);
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-    .legal-container ul {
-      padding-left: 24px;
-    }
-    .legal-container li {
-      margin-bottom: 8px;
-    }
+    .legal-page{background:var(--pk-bg-light);color:var(--pk-text-main)}
+    .legal-hero{padding:clamp(72px,8vw,118px) 24px 48px;background:var(--pk-bg-light);border-bottom:1px solid var(--pk-divider)}
+    .legal-hero-inner{max-width:980px;margin:0 auto}
+    .legal-kicker{display:block;margin-bottom:18px;color:var(--pk-accent-coral);font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    .legal-hero h1{font-family:var(--font-serif);font-size:clamp(2.5rem,6vw,5.25rem);line-height:1.02;font-weight:400;color:var(--pk-text-main);margin:0 0 20px;letter-spacing:-.02em}
+    .legal-hero p{max-width:720px;color:var(--pk-text-muted);font-size:1.03rem;line-height:1.75;margin:0}
+    .legal-meta{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:28px;color:var(--pk-text-muted);font-size:.88rem}
+    .legal-content{padding:54px 24px 104px;background:var(--pk-bg-surface)}
+    .legal-shell{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:34px}
+    @media(min-width:980px){.legal-shell{grid-template-columns:240px minmax(0,1fr);align-items:start}}
+    .legal-toc{position:sticky;top:112px;padding:22px;border:1px solid var(--pk-divider);border-radius:22px;background:rgba(255,255,255,.56)}
+    .legal-toc strong{display:block;margin-bottom:12px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pk-text-main)}
+    .legal-toc a{display:block;padding:8px 0;color:var(--pk-text-muted);font-size:.9rem;line-height:1.35}
+    .legal-toc a:hover{color:var(--pk-accent-coral)}
+    .legal-body{max-width:720px}
+    .legal-card{padding:28px;border:1px solid var(--pk-divider);border-radius:24px;background:#fff;margin-bottom:24px;box-shadow:0 30px 80px -70px rgba(26,51,44,.35)}
+    .legal-body h2{font-size:1.28rem;color:var(--pk-dark-green);margin:0 0 14px;letter-spacing:-.01em}
+    .legal-body h3{font-size:1rem;color:var(--pk-text-main);margin:24px 0 10px}
+    .legal-body p,.legal-body li{color:var(--pk-text-muted);font-size:.96rem;line-height:1.72}
+    .legal-body p{margin:0 0 14px}
+    .legal-body ul{padding-left:20px;margin:0 0 14px}
+    .legal-body li{margin-bottom:8px}
+    .legal-note{border-left:3px solid var(--pk-accent-coral);padding:14px 16px;background:rgba(232,115,74,.08);border-radius:12px;color:var(--pk-text-muted)}
+    .legal-contact{font-weight:650;color:var(--pk-dark-green)}
+    @media(max-width:760px){.legal-page{overflow-x:hidden}.legal-hero{padding:64px 20px 38px}.legal-hero-inner,.legal-shell,.legal-body,.legal-card,.legal-toc{width:100%;min-width:0;max-width:100%}.legal-hero h1{font-size:2.25rem;line-height:1.08;overflow-wrap:break-word}.legal-hero p,.legal-meta,.legal-body p,.legal-body li{overflow-wrap:break-word}.legal-content{padding:36px 20px 84px}.legal-toc{position:relative;top:auto}.legal-card{padding:22px;border-radius:20px}}
   </style>
 </head>
 <body>
@@ -59,15 +44,7 @@
   <nav class="navbar" id="main-nav">
     <div class="nav-container">
       <a href="index.html" class="nav-logo" aria-label="InnovateHealth Home">
-        <div class="logo-mark">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <path d="M16 4C12 4 9 7 9 11C9 15 12 18 16 22C20 18 23 15 23 11C23 7 20 4 16 4Z" stroke="#1A2B28" stroke-width="2" fill="none"/>
-            <circle cx="16" cy="11" r="3" fill="#1A2B28"/>
-            <path d="M8 8C5 11 5 16 8 19" stroke="#1A2B28" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M24 8C27 11 27 16 24 19" stroke="#1A2B28" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          </svg>
-        </div>
-        <span class="logo-text">InnovateHealth</span>
+        <img src="files/logos/3-cropped.png" alt="InnovateHealth" class="nav-logo-image">
       </a>
 
       <div class="nav-links">
@@ -86,7 +63,6 @@
       </div>
     </div>
 
-    <!-- Mobile Menu Drawer -->
     <div class="mobile-menu-drawer" id="mobile-menu-drawer">
       <div class="mobile-nav-links">
         <a href="platform.html" class="mobile-nav-link">Our Platform</a>
@@ -100,90 +76,257 @@
     </div>
   </nav>
 
-  <main id="main-content">
-    <section class="legal-hero">
-      <div class="container">
-        <h1>Privacy Policy</h1>
-        <p>Last Updated: April 2026</p>
+  <main id="main-content" class="legal-page">
+    <section class="legal-hero" id="privacy-overview">
+      <div class="legal-hero-inner animate-on-scroll">
+        <span class="legal-kicker">Privacy Policy</span>
+        <h1>How we handle data at Innovate Health AI.</h1>
+        <p>InnovateCare LLC d/b/a Innovate Health AI builds healthcare operations software for independent clinics. This policy explains how we collect, use, protect, and share information through our website and services.</p>
+        <div class="legal-meta">
+          <span>Effective date: May 3, 2026</span>
+          <span>Last updated: May 3, 2026</span>
+        </div>
       </div>
     </section>
 
     <section class="legal-content">
-      <div class="legal-container">
-        <p>At InnovateHealth, we take privacy and security seriously. This Privacy Policy describes how we collect, use, and share information when you use our website and services.</p>
+      <div class="legal-shell">
+        <aside class="legal-toc animate-on-scroll" aria-label="Privacy policy sections">
+          <strong>On this page</strong>
+          <a href="#privacy-overview">Overview</a>
+          <a href="#information-we-collect">Information we collect</a>
+          <a href="#hipaa-compliance">HIPAA / PHI handling</a>
+          <a href="#sms-communications">SMS communications</a>
+          <a href="#data-security">Data security</a>
+          <a href="#privacy-contact">Contact</a>
+        </aside>
 
-        <h2>1. Information We Collect</h2>
-        <p>We may collect the following types of information:</p>
-        <ul>
-          <li><strong>Personal Information:</strong> Name, email address, phone number, and clinic details when you contact us or book a demo.</li>
-          <li><strong>Usage Data:</strong> Information about how you interact with our website, such as IP address, browser type, and pages visited.</li>
-        </ul>
+        <div class="legal-body">
+          <section class="legal-card">
+            <h2>1. Who we are</h2>
+            <p>InnovateCare LLC d/b/a Innovate Health AI ("Innovate Health AI," "InnovateHealth," "we," "our," or "us") is a healthcare operations company that helps clinics manage operational workflows such as patient calls, scheduling support, intake, reminders, handoffs, and follow-up.</p>
+            <p>We do not provide medical advice, diagnosis, prescribing, emergency services, or clinical decision-making. Clinics and licensed healthcare professionals remain responsible for patient care and clinical judgment.</p>
+          </section>
 
-        <h2>2. Patient Data and HIPAA Compliance</h2>
-        <p>When our platform is used by a clinic, we act as a Business Associate under the Health Insurance Portability and Accountability Act (HIPAA). We enter into Business Associate Agreements (BAAs) with our clients to ensure that all Protected Health Information (PHI) is handled with the highest level of security and compliance.</p>
-        <p>We do not sell, rent, or share PHI for marketing purposes. All PHI is end-to-end encrypted in transit and at rest.</p>
+          <section class="legal-card">
+            <h2>2. Scope of this policy</h2>
+            <p>This Privacy Policy applies to information collected through our public website, contact forms, demo requests, business communications, and services we provide to clinic customers.</p>
+            <p>This policy is separate from any Notice of Privacy Practices provided by a healthcare provider. If you are a patient, your clinic or healthcare provider is responsible for explaining how it uses and discloses your medical information.</p>
+            <p class="legal-note">Please do not submit sensitive medical information, emergency requests, or detailed patient information through our public website forms. If you have a medical emergency, call 911 or contact local emergency services.</p>
+          </section>
 
-        <h2>3. How We Use Your Information</h2>
-        <p>We use the information we collect to:</p>
-        <ul>
-          <li>Provide, maintain, and improve our services.</li>
-          <li>Communicate with you regarding demos, support, and updates.</li>
-          <li>Ensure compliance with legal obligations.</li>
-        </ul>
+          <section class="legal-card" id="information-we-collect">
+            <h2>3. Information we collect</h2>
+            <h3>Website and contact form data</h3>
+            <p>When you contact us, request a demo, or submit a business inquiry, we may collect your name, work email, phone number, clinic or company name, role, message content, and related business details.</p>
+            <h3>Demo request and business inquiry data</h3>
+            <p>We may collect information about your clinic operations, workflow needs, preferred contact method, and scheduling availability so we can respond to your request and evaluate whether our services are a fit.</p>
+            <h3>Communication data</h3>
+            <p>If you communicate with us by email, phone, SMS, web form, or other channels, we may process the contents of those communications and related metadata such as date, time, sender, recipient, and contact preferences.</p>
+            <h3>Device, browser, and usage data</h3>
+            <p>Like most websites, our servers or service providers may collect IP address, browser type, device type, pages viewed, referring pages, and similar technical information used to operate and protect the website.</p>
+            <h3>Clinic/customer data processed on behalf of customers</h3>
+            <p>When we provide services to clinic customers, we may process patient, appointment, communication, intake, reminder, or workflow information on behalf of that customer. Depending on the context, some of this information may be protected health information (PHI) or electronic protected health information (ePHI).</p>
+          </section>
 
-        <h2>4. Information Sharing</h2>
-        <p>We do not sell your personal information. We may share information with trusted third-party service providers who assist us in operating our website and services, subject to strict confidentiality agreements.</p>
+          <section class="legal-card">
+            <h2>4. How we use information</h2>
+            <ul>
+              <li>Respond to demo requests, contact submissions, and business inquiries.</li>
+              <li>Provide, operate, maintain, and improve our healthcare operations services.</li>
+              <li>Support clinic workflows such as communication routing, scheduling support, intake, reminders, and operational handoffs.</li>
+              <li>Communicate with clinics, users, vendors, and partners about service updates, support, and administrative matters.</li>
+              <li>Protect our website, systems, customers, users, and business from misuse, fraud, security incidents, and legal risk.</li>
+              <li>Comply with contracts, legal obligations, regulatory obligations, and applicable healthcare privacy requirements.</li>
+            </ul>
+          </section>
 
-        <h2>5. Security</h2>
-        <p>We implement robust security measures to protect your information, including encryption, access controls, and regular security audits. However, no method of transmission over the Internet is 100% secure.</p>
+          <section class="legal-card" id="hipaa-compliance">
+            <h2>5. HIPAA / PHI handling</h2>
+            <p>Website visitor data is not automatically PHI simply because our business operates in healthcare. For example, a business email submitted through a demo form is generally handled as business contact information unless the context makes it subject to specific healthcare privacy obligations.</p>
+            <p>When we process PHI or ePHI on behalf of a covered entity or business associate, we do so as a service provider/business associate where applicable, under the relevant Business Associate Agreement (BAA), customer instructions, and applicable law.</p>
+            <p>We use administrative, technical, and physical safeguards designed to protect PHI and ePHI where applicable. We also execute BAAs with applicable vendors and subprocessors that create, receive, maintain, transmit, or otherwise handle PHI/ePHI within the scope of services they provide to us.</p>
+            <p>We currently use Microsoft Azure for certain infrastructure components and rely on Microsoft BAA coverage for HIPAA-eligible Azure services used within the applicable scope. We also use third-party vendors and subprocessors to support infrastructure, voice workflows, communications, security, and related operations. Where a vendor creates, receives, maintains, or transmits PHI/ePHI on our behalf, we use appropriate contractual protections, including Business Associate Agreements where applicable. Vendor coverage depends on the specific service, configuration, contract, and use case.</p>
+            <p>We do not claim to be "HIPAA certified." HIPAA does not create a single official certification that proves a company or cloud service is compliant in all contexts. Compliance depends on the specific services used, safeguards implemented, contracts in place, customer configuration, and ongoing operational practices.</p>
+          </section>
 
-        <h2>6. Your Rights</h2>
-        <p>Depending on your location, you may have rights regarding your personal information, such as the right to access, correct, or delete your data. Contact us to exercise these rights.</p>
+          <section class="legal-card" id="sms-communications">
+            <h2>6. SMS and communications</h2>
+            <p>Where applicable, Innovate Health AI may support operational or informational communications by phone, SMS, email, or similar channels on behalf of clinic customers or in response to business inquiries.</p>
+            <p>If you provide your phone number through our website and select the SMS consent checkbox, you agree to receive operational and informational text messages from Innovate Health AI about demo scheduling, clinic workflow follow-up, service updates, and support.</p>
+            <ul>
+              <li>Messages may include appointment reminders, scheduling follow-up, intake reminders, callback coordination, demo scheduling, or support communications.</li>
+              <li>Message frequency varies based on the workflow, clinic, and user interaction.</li>
+              <li>Message and data rates may apply, depending on your mobile carrier and plan.</li>
+              <li>Where supported, you may reply STOP to opt out of text messages and HELP for help.</li>
+              <li>Consent to receive marketing text messages is not a condition of purchase.</li>
+              <li>We do not sell or share SMS consent data, mobile numbers, or opt-in information with third parties or affiliates for marketing or promotional purposes.</li>
+            </ul>
+            <p>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties, except with service providers and carriers as needed to deliver messages, operate the service, comply with law, or protect rights and safety.</p>
+            <p>Standard SMS is not always appropriate for sensitive health information. We design operational communications to limit unnecessary sensitive content and may direct patients to contact their clinic or use a secure channel for detailed clinical information.</p>
+          </section>
 
-        <h2>7. Contact Us</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-        <p><strong>Email:</strong> privacy@innovatehealth.ai<br>
-        <strong>Address:</strong> InnovateHealth Inc., San Francisco, CA</p>
+          <section class="legal-card">
+            <h2>7. Sharing and disclosure</h2>
+            <p>We do not sell personal information or PHI. We may share information in the following limited circumstances:</p>
+            <ul>
+              <li><strong>Service providers and subprocessors:</strong> vendors that help us host, operate, secure, communicate, support, analyze, or improve our services, subject to appropriate contractual obligations and BAAs where applicable.</li>
+              <li><strong>Clinic customers:</strong> information processed on behalf of a clinic may be made available to that clinic according to our agreement with the clinic.</li>
+              <li><strong>Legal obligations:</strong> when required by law, subpoena, court order, regulatory request, or to protect rights, safety, security, and integrity.</li>
+              <li><strong>Business transfers:</strong> in connection with a merger, financing, acquisition, reorganization, or sale of assets, subject to appropriate protections.</li>
+              <li><strong>With consent:</strong> when you direct us or authorize us to share information.</li>
+            </ul>
+          </section>
+
+          <section class="legal-card">
+            <h2>8. Data retention</h2>
+            <p>We retain information for as long as reasonably necessary to provide services, respond to inquiries, maintain business records, comply with legal and contractual obligations, resolve disputes, protect security, and support audit or compliance needs.</p>
+            <p>For customer data processed on behalf of clinics, retention may be governed by the applicable customer agreement, BAA, legal requirements, and customer instructions.</p>
+          </section>
+
+          <section class="legal-card" id="data-security">
+            <h2>9. Data security practices</h2>
+            <p>We use safeguards designed to protect information we process, including where applicable:</p>
+            <ul>
+              <li>Access controls and role-based access practices.</li>
+              <li>Encryption in transit and at rest where appropriate for the service and data type.</li>
+              <li>Vendor and subprocessor review for systems that may handle PHI/ePHI.</li>
+              <li>Administrative policies, workforce access limitations, and confidentiality obligations.</li>
+              <li>Logging, monitoring, and incident response practices appropriate to the stage and scope of our business.</li>
+              <li>Physical safeguards through reputable infrastructure and workplace practices.</li>
+            </ul>
+            <p>No method of transmission, storage, or processing is completely secure. We avoid inflated security promises and continue to improve our safeguards as the platform matures.</p>
+          </section>
+
+          <section class="legal-card">
+            <h2>10. Your choices and rights</h2>
+            <p>You may contact us to request access, correction, deletion, or restriction of personal information we maintain about you, subject to applicable law, identity verification, and any contractual or legal retention requirements.</p>
+            <p>If you are a patient seeking access to, correction of, or deletion of medical records held by your healthcare provider, please contact that provider directly. We may not be able to fulfill patient record requests except through the applicable clinic customer.</p>
+          </section>
+
+          <section class="legal-card">
+            <h2>11. Cookies and analytics</h2>
+            <p>Our website may use basic cookies, browser storage, server logs, or similar technologies needed to operate, secure, and improve the site. If we add analytics, advertising, or tracking technologies in the future, we will update this policy as appropriate.</p>
+            <p>You can usually adjust your browser settings to block or delete cookies, but some website features may not work as intended.</p>
+          </section>
+
+          <section class="legal-card">
+            <h2>12. Children&apos;s privacy</h2>
+            <p>Our website and business-facing services are not directed to children under 13. We do not knowingly collect personal information from children through our public website. Patient-related information, where applicable, is processed on behalf of clinic customers and subject to their instructions and applicable law.</p>
+          </section>
+
+          <section class="legal-card">
+            <h2>13. International transfers</h2>
+            <p>We are based in the United States and may work with personnel, vendors, or infrastructure in different locations. Where information is processed across borders, we use appropriate safeguards and contractual obligations for the data type and service context.</p>
+          </section>
+
+          <section class="legal-card">
+            <h2>14. Changes to this policy</h2>
+            <p>We may update this Privacy Policy from time to time. When we do, we will update the effective or last updated date. Material changes may be communicated through additional notice where appropriate.</p>
+          </section>
+
+          <section class="legal-card" id="privacy-contact">
+            <h2>15. Contact us</h2>
+            <p>For privacy, security, or legal questions, contact:</p>
+            <p><span class="legal-contact">InnovateCare LLC d/b/a Innovate Health AI</span><br>Texas, United States<br>Email: <a href="mailto:hello@innovatehealth.ai">hello@innovatehealth.ai</a></p>
+          </section>
+        </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
   <footer class="footer" id="footer">
-    <div class="footer-container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="footer-social">
-            <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-            <a href="#" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <!-- Footer CTA Band -->
+    <div class="footer-cta-band">
+      <div class="footer-cta-inner">
+        <div class="footer-cta-text">
+          <h2 class="footer-cta-headline">Ready to reclaim your front desk?</h2>
+          <p class="footer-cta-sub">See InnovateHealth running inside a real clinic — live, in 30 minutes.</p>
+        </div>
+        <a href="contact.html" class="footer-cta-btn">Book a Demo</a>
+      </div>
+    </div>
+
+    <!-- Footer Main -->
+    <div class="footer-main">
+      <div class="footer-container">
+
+        <!-- Top Row: Brand + Columns -->
+        <div class="footer-grid">
+
+          <!-- Brand Column -->
+          <div class="footer-brand-col">
+            <img src="files/logos/1-cropped.png" alt="InnovateHealth" class="footer-brand-logo">
+            <p class="footer-tagline">Healthcare operations, simplified.</p>
+            <div class="footer-badges">
+              <a href="privacy.html#hipaa-compliance" class="footer-hipaa-badge" aria-label="Read about HIPAA safeguards">
+                <img src="files/logos/hipaa-compliant.svg" alt="HIPAA compliance information" class="footer-hipaa-logo">
+              </a>
+              <span class="footer-badge-pill">SOC 2 In Progress</span>
+              <span class="footer-badge-pill">Made in Texas</span>
+            </div>
+            <div class="footer-partner-badge" aria-label="Supported by Microsoft for Startups">
+              <span class="footer-microsoft-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              <span>Supported by Microsoft for Startups</span>
+            </div>
           </div>
-          <p class="footer-tagline">InnovateHealth. By your side.</p>
-          <p class="footer-copyright">© 2026 InnovateHealth. All rights reserved.</p>
+
+          <!-- Product Column -->
+          <div class="footer-col">
+            <h4 class="footer-col-heading">Product</h4>
+            <ul class="footer-col-links">
+              <li><a href="platform.html">Platform Overview</a></li>
+              <li><a href="platform.html#capabilities">AI Voice Front Desk</a></li>
+              <li><a href="platform.html#capabilities">Smart Scheduling</a></li>
+              <li><a href="platform.html#capabilities">Digital Intake</a></li>
+              <li><a href="platform.html#capabilities">Reminders & Follow-Up</a></li>
+            </ul>
+          </div>
+
+          <!-- Company Column -->
+          <div class="footer-col">
+            <h4 class="footer-col-heading">Company</h4>
+            <ul class="footer-col-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="about.html#founder">Our Story</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal Column -->
+          <div class="footer-col">
+            <h4 class="footer-col-heading">Legal & Compliance</h4>
+            <ul class="footer-col-links">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms and Conditions</a></li>
+              <li><a href="privacy.html#hipaa-compliance">HIPAA Compliance</a></li>
+              <li><a href="privacy.html#data-security">Data Security</a></li>
+            </ul>
+          </div>
+
         </div>
 
-        <div class="footer-columns">
-          <div class="footer-col">
-            <h4>Platform</h4>
-            <ul>
-              <li><a href="platform.html">Our Platform</a></li>
-              <li><a href="index.html#faq">FAQs</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="privacy.html" style="color: var(--pk-accent-coral);">Privacy Policy</a></li>
-              <li><a href="terms.html">Terms of Service</a></li>
-            </ul>
+        <!-- Divider -->
+        <div class="footer-divider-line"></div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <p class="footer-copyright">© 2026 InnovateCare LLC d/b/a Innovate Health AI. All rights reserved.</p>
+          <div class="footer-social-row">
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
           </div>
         </div>
+
       </div>
     </div>
   </footer>
