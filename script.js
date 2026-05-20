@@ -156,14 +156,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Auto-show toast after 3 seconds
   setTimeout(() => {
-    if (!toastDismissed) {
+    if (!toastDismissed && breezeToast) {
       breezeToast.classList.add('visible');
       toastShown = true;
     }
   }, 3000);
 
   // Update toast message when user scrolls to Section 4
-  if (capabilitiesSection) {
+  if (capabilitiesSection && breezeToastMsg) {
     const capObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !contextUpdated && toastShown && !toastDismissed) {
@@ -177,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Dismiss toast → show collapsed mic icon
   function dismissToast() {
+    if (!breezeToast || !breezeMicIcon) return;
     breezeToast.classList.remove('visible');
     toastDismissed = true;
     setTimeout(() => {
@@ -187,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Open full voice panel
   function openPanel() {
+    if (!breezeToast || !breezeMicIcon || !breezePanel) return;
     breezeToast.classList.remove('visible');
     breezeToast.classList.add('hidden');
     breezeMicIcon.classList.add('hidden');
@@ -195,6 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Close panel → show mic icon
   function closePanel() {
+    if (!breezePanel || !breezeMicIcon) return;
     breezePanel.classList.remove('active');
     setTimeout(() => {
       breezeMicIcon.classList.remove('hidden');
@@ -261,12 +264,40 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(step);
   }
 
+  // Temporary Google Form handoff for demo requests.
+  const demoRequestForm = document.getElementById('demo-request-form');
+  const demoFormSuccess = document.getElementById('demo-form-success');
+  const demoRequestSubmit = document.getElementById('demo-request-submit');
+  if (demoRequestForm && demoFormSuccess) {
+    demoRequestForm.addEventListener('submit', () => {
+      if (demoRequestSubmit) {
+        demoRequestSubmit.disabled = true;
+        demoRequestSubmit.classList.add('is-submitting');
+        demoRequestSubmit.textContent = 'Sending Request...';
+      }
+      demoFormSuccess.classList.remove('visible');
+      window.setTimeout(() => {
+        demoRequestForm.reset();
+        demoFormSuccess.classList.add('visible');
+        demoFormSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (demoRequestSubmit) {
+          demoRequestSubmit.disabled = false;
+          demoRequestSubmit.classList.remove('is-submitting');
+          demoRequestSubmit.textContent = 'Request Demo';
+        }
+      }, 250);
+    });
+  }
+
   if (outcomeNumbers.length > 0) {
     const countUpObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !countUpTriggered) {
           countUpTriggered = true;
-          outcomeNumbers.forEach(el => animateCountUp(el));
+          outcomeNumbers.forEach(el => {
+            el.textContent = '0';
+            animateCountUp(el);
+          });
           countUpObserver.disconnect();
         }
       });
@@ -303,4 +334,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SMS consent information for patient appointment communications sent by clinics via InnovateHealth.">
+  <title>SMS Consent | InnovateHealth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=18">
+  <link rel="icon" type="image/png" sizes="32x32" href="files/logos/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="files/logos/apple-touch-icon.png">
+  <style>
+    .legal-page{background:var(--pk-bg-light);color:var(--pk-text-main)}
+    .legal-hero{padding:clamp(72px,8vw,118px) 24px 48px;background:var(--pk-bg-light);border-bottom:1px solid var(--pk-divider)}
+    .legal-hero-inner{max-width:980px;margin:0 auto}
+    .legal-kicker{display:block;margin-bottom:18px;color:var(--pk-accent-coral);font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    .legal-hero h1{font-family:var(--font-serif);font-size:clamp(2.5rem,6vw,5.25rem);line-height:1.02;font-weight:400;color:var(--pk-text-main);margin:0 0 20px;letter-spacing:-.02em}
+    .legal-hero p{max-width:760px;color:var(--pk-text-muted);font-size:1.03rem;line-height:1.75;margin:0}
+    .legal-meta{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:28px;color:var(--pk-text-muted);font-size:.88rem}
+    .legal-content{padding:54px 24px 104px;background:var(--pk-bg-surface)}
+    .legal-shell{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:34px}
+    @media(min-width:980px){.legal-shell{grid-template-columns:240px minmax(0,1fr);align-items:start}}
+    .legal-toc{position:sticky;top:112px;padding:22px;border:1px solid var(--pk-divider);border-radius:22px;background:rgba(255,255,255,.56)}
+    .legal-toc strong{display:block;margin-bottom:12px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pk-text-main)}
+    .legal-toc a{display:block;padding:8px 0;color:var(--pk-text-muted);font-size:.9rem;line-height:1.35}
+    .legal-toc a:hover{color:var(--pk-accent-coral)}
+    .legal-body{max-width:720px}
+    .legal-card{padding:28px;border:1px solid var(--pk-divider);border-radius:24px;background:#fff;margin-bottom:24px;box-shadow:0 30px 80px -70px rgba(26,51,44,.35)}
+    .legal-body h2{font-size:1.28rem;color:var(--pk-dark-green);margin:0 0 14px;letter-spacing:-.01em}
+    .legal-body h3{font-size:1rem;color:var(--pk-text-main);margin:24px 0 10px}
+    .legal-body p,.legal-body li{color:var(--pk-text-muted);font-size:.96rem;line-height:1.72}
+    .legal-body p{margin:0 0 14px}
+    .legal-body ul{padding-left:20px;margin:0 0 14px;list-style:disc}
+    .legal-body li{margin-bottom:8px}
+    .legal-note{border-left:3px solid var(--pk-accent-coral);padding:14px 16px;background:rgba(232,115,74,.08);border-radius:12px;color:var(--pk-text-muted)}
+    .consent-box{padding:18px 20px;border:1px solid rgba(26,51,44,.16);border-radius:18px;background:rgba(193,215,205,.2);color:var(--pk-dark-green);font-weight:650;line-height:1.65;margin:18px 0}
+    .sample-message{padding:16px 18px;border:1px solid var(--pk-divider);border-radius:16px;background:var(--pk-bg-surface);font-family:var(--font-sans);color:var(--pk-text-main);line-height:1.65;margin-bottom:12px}
+    @media(max-width:760px){.legal-page{overflow-x:hidden}.legal-hero{padding:64px 20px 38px}.legal-hero-inner,.legal-shell,.legal-body,.legal-card,.legal-toc{width:100%;min-width:0;max-width:100%}.legal-hero h1{font-size:2.25rem;line-height:1.08;overflow-wrap:break-word}.legal-hero p,.legal-meta,.legal-body p,.legal-body li{overflow-wrap:break-word}.legal-content{padding:36px 20px 84px}.legal-toc{position:relative;top:auto}.legal-card{padding:22px;border-radius:20px}}
+  </style>
+</head>
+<body>
+  <div class="edge-glow" aria-hidden="true"></div>
+
+  <nav class="navbar" id="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="InnovateHealth Home">
+        <img src="files/logos/innovatehealth-logo-dark.png" alt="InnovateHealth" class="nav-logo-image">
+      </a>
+      <div class="nav-links">
+        <a href="platform.html" class="nav-link">Our Platform</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn-login">Log in</a>
+        <a href="contact.html" class="btn-cta-nav" id="nav-cta">Book a Demo</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close" style="display: none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+      <div class="mobile-nav-links">
+        <a href="platform.html" class="mobile-nav-link">Our Platform</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
+      <div class="mobile-nav-footer">
+        <a href="contact.html" class="btn-login mobile-login">Log in</a>
+        <a href="contact.html" class="btn-cta-nav mobile-cta">Book a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content" class="legal-page">
+    <section class="legal-hero" id="sms-consent-overview">
+      <div class="legal-hero-inner animate-on-scroll">
+        <span class="legal-kicker">SMS Consent</span>
+        <h1>SMS Consent for Patient Appointment Communications</h1>
+        <p>Patients may receive transactional text messages from InnovateHealth on behalf of their clinic. These messages support appointment operations and clinic workflow follow-up.</p>
+        <div class="legal-meta">
+          <span>Effective date: May 16, 2026</span>
+          <span>Last updated: May 16, 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal-content">
+      <div class="legal-shell">
+        <aside class="legal-toc animate-on-scroll" aria-label="SMS consent sections">
+          <strong>On this page</strong>
+          <a href="#program-scope">Program scope</a>
+          <a href="#consent-language">Consent language</a>
+          <a href="#sample-messages">Sample messages</a>
+          <a href="#not-included">What is not included</a>
+          <a href="#sms-help">Help and opt-out</a>
+        </aside>
+
+        <div class="legal-body">
+          <section class="legal-card" id="program-scope">
+            <h2>1. Program scope</h2>
+            <p>InnovateHealth supports clinic-approved operational messaging. Messages may be sent by a partner clinic via InnovateHealth after a patient provides their mobile number and consents through an appointment, intake, registration, website, or staff-assisted workflow.</p>
+            <ul>
+              <li>Appointment confirmations</li>
+              <li>Appointment reminders</li>
+              <li>Pre-visit intake form links</li>
+              <li>Reschedule or cancel updates</li>
+              <li>Callback coordination</li>
+              <li>Related clinic operational support for an existing appointment or requested clinic communication</li>
+            </ul>
+          </section>
+
+          <section class="legal-card" id="consent-language">
+            <h2>2. Consent language</h2>
+            <p>When patients opt in to patient appointment communications, the consent language is:</p>
+            <div class="consent-box">
+              I agree to receive transactional text messages from InnovateHealth on behalf of my clinic about appointment confirmations, reminders, intake forms, reschedule/cancel updates, callback coordination, and related clinic operational support. You may receive up to 15 messages per month. Message and data rates may apply. Reply STOP to opt out and HELP for help. Consent is not a condition of treatment or purchase.
+            </div>
+            <p>SMS opt-in data, mobile numbers, and consent status are not sold or shared with third parties or affiliates for marketing or promotional purposes.</p>
+          </section>
+
+          <section class="legal-card" id="sample-messages">
+            <h2>3. Sample messages</h2>
+            <div class="sample-message">Hi [First Name], this is [Clinic Name] via InnovateHealth. Reminder: your appointment is on [Date] at [Time]. To reschedule, use [Link] or call [Phone Number]. Reply STOP to opt out.</div>
+            <div class="sample-message">Hi [First Name], this is [Clinic Name] via InnovateHealth. Please complete your pre-visit intake form before your appointment: [Link]. Reply HELP for help or STOP to opt out.</div>
+          </section>
+
+          <section class="legal-card" id="not-included">
+            <h2>4. What is not included</h2>
+            <p>This patient appointment messaging program is not used for promotional marketing. Standard SMS is not used for diagnosis, treatment advice, test results, prescription decisions, emergency instructions, or sensitive clinical details.</p>
+            <p class="legal-note">If you have a medical emergency, call 911 or contact local emergency services. Do not use SMS, website forms, or InnovateHealth workflows for emergency medical situations.</p>
+          </section>
+
+          <section class="legal-card" id="sms-help">
+            <h2>5. Help, opt-out, and terms</h2>
+            <ul>
+              <li>Reply STOP to opt out of text messages.</li>
+              <li>Reply HELP for help.</li>
+              <li>You may receive up to 15 text messages per month, depending on clinic workflow and appointment activity.</li>
+              <li>Message and data rates may apply.</li>
+              <li>Consent is not a condition of treatment or purchase.</li>
+            </ul>
+            <p>For more details, read our <a href="sms-terms.html">SMS Terms</a>, <a href="privacy.html">Privacy Policy</a>, and <a href="terms.html">Terms and Conditions</a>.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="footer-main">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <img src="files/logos/innovatehealth-logo-light.png" alt="InnovateHealth" class="footer-brand-logo">
+            <p class="footer-tagline">Healthcare operations, simplified.</p>
+            <div class="footer-badges">
+              <a href="privacy.html#hipaa-compliance" class="footer-hipaa-badge" aria-label="Read about HIPAA safeguards">
+                <img src="files/logos/hipaa-compliant.svg" alt="HIPAA compliance information" class="footer-hipaa-logo">
+              </a>
+              <span class="footer-badge-pill">Made in Texas</span>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-heading">Product</h4>
+            <ul class="footer-col-links">
+              <li><a href="platform.html">Platform Overview</a></li>
+              <li><a href="platform.html#capabilities">AI Voice Front Desk</a></li>
+              <li><a href="platform.html#capabilities">Smart Scheduling</a></li>
+              <li><a href="platform.html#capabilities">Digital Intake</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-heading">Company</h4>
+            <ul class="footer-col-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-heading">Legal & Compliance</h4>
+            <ul class="footer-col-links">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms and Conditions</a></li>
+              <li><a href="sms-consent.html">SMS Consent</a></li>
+              <li><a href="sms-terms.html">SMS Terms</a></li>
+              <li><a href="privacy.html#data-security">Data Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-divider-line"></div>
+        <div class="footer-bottom-bar">
+          <p class="footer-copyright">© 2026 InnovateCare LLC d/b/a InnovateHealth. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=16"></script>
+</body>
+</html>
