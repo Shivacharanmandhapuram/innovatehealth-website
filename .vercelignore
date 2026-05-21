@@ -1,0 +1,16 @@
+# Internal/source-of-truth docs should not be published as static assets
+INNOVATEHEALTH_CONTEXT.md
+DESIGN_SYSTEM_GUIDE.md
+STYLE_FONT_GUIDE.md
+AGENTS.md
+private/
+
+# Uploaded research/source files not needed by public site
+files/*.pdf
+files/*.zip
+files/hipaa-compliant-vector-logo-seeklogo/
+
+# Local/dev files
+.git/
+.DS_Store
+*.log
